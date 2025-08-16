@@ -60,7 +60,7 @@ CREATE TABLE `quizzes`.`answer` (
 CREATE TABLE `quizzes`.`result` (
   `id` INT NOT NULL,
   `quiz_id` INT NULL,
-  `condition` VARCHAR(100) NULL,
+  `requirement` VARCHAR(100) NULL,
   `result` VARCHAR(500) NULL,
   `result_image_src` VARCHAR(1000) NULL,
   PRIMARY KEY (`id`),
