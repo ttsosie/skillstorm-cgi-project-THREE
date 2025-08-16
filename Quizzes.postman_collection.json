@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "3f3a7183-9107-44e1-9467-3be50172b1e9",
+		"name": "Quizzes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45548510"
+	},
+	"item": [
+		{
+			"name": "Result",
+			"item": [
+				{
+					"name": "Find All Results",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/results",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"results"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Results By Result ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/results/result-id/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"results",
+								"result-id",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Results By Quiz ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/results/quiz-id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"results",
+								"quiz-id",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
