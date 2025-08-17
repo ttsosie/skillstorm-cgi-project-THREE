@@ -33,15 +33,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:8080/results/result-id/4",
+							"raw": "localhost:8080/results/12",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"results",
-								"result-id",
-								"4"
+								"12"
 							]
 						}
 					},
@@ -49,19 +48,103 @@
 				},
 				{
 					"name": "Find All Results By Quiz ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quizId\": 5\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "localhost:8080/results/quiz-id/1",
+							"raw": "localhost:8080/results/quiz-id",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
 								"results",
-								"quiz-id",
-								"1"
+								"quiz-id"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Answer",
+			"item": [
+				{
+					"name": "Find All Answers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/answers",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"answers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Answers by Answer ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/answers/103",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"answers",
+								"103"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find All Answers By Question ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"questionId\": 124\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/answers/question-id",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"answers",
+								"question-id"
 							]
 						}
 					},

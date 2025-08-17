@@ -24,7 +24,7 @@ public class ResultService
 		this.repo = repo;
 	}
 	
-	//find all result records (Method 1 of 2)
+	//find all result records (Method 1 of 3)
 	public ResponseEntity<Iterable<Result>> findAllResult()
 	{
 		Iterable<Result> results = this.repo.findAll();
@@ -34,7 +34,7 @@ public class ResultService
 		return ResponseEntity.ok(results);
 	}
 	
-	//find a result record(s) by result id (Method 2 of 2)
+	//find a result record(s) by result id (Method 2 of 3)
 	public ResponseEntity<Result> findByResultId(int id)
 	{
 		Optional<Result> result = this.repo.findById(id);

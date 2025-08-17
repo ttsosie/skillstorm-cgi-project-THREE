@@ -29,15 +29,15 @@ public class ResultController
 		this.service = service;
 	}
 	
-	//find all result records with Error Response (Method 1 of 2)
+	//find all result records with Error Response (Method 1 of 3)
 	@GetMapping
 	public ResponseEntity<Iterable<Result>> findAllResult()
 	{
 		return this.service.findAllResult();
 	}
 	
-	//find a result record(s) by result id with Error Response (Method 2 of 2)
-	@GetMapping("/result-id/{id}")
+	//find a result record(s) by result id with Error Response (Method 2 of 3)
+	@GetMapping("/{id}")
 	public ResponseEntity<Result> findByResultId(@PathVariable int id)
 	{
 		return this.service.findByResultId(id);
