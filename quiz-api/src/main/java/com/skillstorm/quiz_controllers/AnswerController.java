@@ -25,24 +25,25 @@ public class AnswerController
 		this.service = service;
 	}
 	
-	//find all result records with Error Response (Method 1 of 2)
+	//find all result records with Error Response (Method 1 of 3)
 	@GetMapping
 	public ResponseEntity<Iterable<Answer>> findAllResult()
 	{
 		return this.service.findAllResult();
 	}
 	
-	//find a result record(s) by result id with Error Response (Method 2 of 2)
+	//find a result record(s) by result id with Error Response (Method 2 of 3)
 	@GetMapping("/{id}")
 	public ResponseEntity<Answer> findByAnswerId(@PathVariable int id)
 	{
 		return this.service.findByAnswerId(id);
 	}
 	
-	//find a result record(s) by quiz id with Error Response (Method 2 of 3)
+	//find a result record(s) by quiz id with Error Response (Method 3 of 3)
 	@GetMapping("/question-id")
 	public ResponseEntity<Iterable<Answer>> findByQuestionId(@RequestBody AnswerDTO dto)
 	{
 		return this.service.findByQuestionId(dto);
 	}
+	
 }

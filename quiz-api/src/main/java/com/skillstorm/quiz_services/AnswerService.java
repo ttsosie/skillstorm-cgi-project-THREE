@@ -7,9 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.skillstorm.dtos.AnswerDTO;
-import com.skillstorm.dtos.ResultDTO;
 import com.skillstorm.quiz_models.Answer;
-import com.skillstorm.quiz_models.Result;
 import com.skillstorm.quiz_repositories.AnswerRespository;
 
 @Service
@@ -45,7 +43,7 @@ public class AnswerService
 		return ResponseEntity.notFound().build();
 	}
 	
-	//find a answer record(s) by question id (Method 2 of 3)
+	//find a answer record(s) by question id (Method 3 of 3)
 	public ResponseEntity<Iterable<Answer>> findByQuestionId(AnswerDTO dto)
 	{
 		Iterable<Answer> answer = this.repo.findByQuestionId( dto.questionId() );
@@ -54,4 +52,5 @@ public class AnswerService
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 		return ResponseEntity.ok(answer);
 	}
+	
 }

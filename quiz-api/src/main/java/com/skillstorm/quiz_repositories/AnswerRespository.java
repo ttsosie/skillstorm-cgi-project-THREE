@@ -13,10 +13,10 @@ import jakarta.transaction.Transactional;
 
 public interface AnswerRespository extends CrudRepository<Answer, Integer>
 {
-	//method to see all available results associated to a quiz id (Method 1 of 1)
+	//method to see all available answers associated to a question id (Method 1 of 1)
 	@Transactional
 	@Modifying
 	@Query(value = "SELECT * FROM answer WHERE question_id = ?1", nativeQuery = true)
 	Iterable<Answer> findByQuestionId(int questionId);
-	
+
 }

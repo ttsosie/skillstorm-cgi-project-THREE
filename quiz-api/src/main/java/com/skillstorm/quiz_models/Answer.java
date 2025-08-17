@@ -33,7 +33,6 @@ public class Answer
 	//constructors
 	public Answer() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Answer(int id, int questionId, String answer, String answerImageSrc, double point, boolean wrong_answer) {
@@ -45,8 +44,8 @@ public class Answer
 		this.point = point;
 		this.wrong_answer = wrong_answer;
 	}
-
-	//getters and setters 
+	
+	//getters and setters
 	public int getId() {
 		return id;
 	}
@@ -93,6 +92,6 @@ public class Answer
 
 	public void setWrong_answer(boolean wrong_answer) {
 		this.wrong_answer = wrong_answer;
-	}	
+	}
 
 }
