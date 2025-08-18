@@ -3,9 +3,8 @@
 ############################
 
 ############################################################
-# insert data(5 records) into quiz table (table 1 of 4)
+# insert data(6 records) into quiz table (table 1 of 4)
 ############################################################
-# INSERT INTO `gobi`.`state`(state_name) VALUES('CA');
 INSERT INTO `quizzes`.`quiz`(id, name, subject, description, number_of_questions, quiz_image_src) 
 VALUES(1,  
 		"Tea Caffeine Knowledge Check",  
@@ -43,11 +42,19 @@ VALUES(5,
 		"Can you pass an elemenatary geography test?",  
 		"Geography",  
 		"Find out if you have the knowledge to pass an elementary geography test.",  
-		10,  "");
-
-
+		10,  
+        "");
+        
+INSERT INTO `quizzes`.`quiz`(id, name, subject, description, number_of_questions, quiz_image_src) 
+VALUES(6,  
+		"Are you Mulled Cider or Pumpkin Spiced Latte?",  
+		"Personality",  
+		"Find out if you're Mulled Wine or Pumpkin Spiced Latte.",  
+		5,  
+        "");
+        
 ########################################################################
-# insert data(43 records) into question table (table 2 of 4)
+# insert data(48 records) into question table (table 2 of 4)
 ########################################################################
 INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUES(100,  1,  1,  "Which tea generally has the highest caffeine per typical serving?",  "Multiple Choice");
 INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUES(101,  1,  2,  "Which process removes the most caffeine from tea leaves?",  "Multiple Choice");
@@ -92,10 +99,14 @@ INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUE
 INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUES(78,  5,  8,  "Which continent has the largest desert/polar desert?",  "Muitiple Choice");
 INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUES(79,  5,  9,  "Which country has the most islands?",  "Multiple Choice");
 INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUES(80,  5,  10,  "Select 2 countries with an UNESCO Heritage Site(s)?",  "Multiple Response");
-
+INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUES(81,  6,  1,  "Which pie would you eat?",  "Multiple Choice");
+INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUES(82,  6,  2,  "Popsicle or Ice Cream?",  "Multiple Choice");
+INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUES(83,  6,  3,  "Which Fall activity would you choose?",  "Multiple Choice");
+INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUES(84,  6,  4,  "Coffee or Tea?",  "Multiple Choice");
+INSERT INTO `quizzes`.`question`(id, quiz_id, sequence, description, type) VALUES(85,  6,  5,  "Which hotel/inn are you staying at?",  "Multiple Choice");
 
 ########################################################################
-# insert data(158 records) into answer table (table 3 of 4)
+# insert data(168 records) into answer table (table 3 of 4)
 #########################################################################
 INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(664,  100,  "Black tea",  "",  10,  0);
 INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(426,  100,  "White tea",  "",  0,  1);
@@ -255,18 +266,27 @@ INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point,
 INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(590,  80,  "Bhutan",  "",  0,  1);
 INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(340,  80,  "Liberia",  "",  0,  1);
 INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(724,  80,  "Kyrgyzstan",  "",  5,  0);
+INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(209,  81,  "Apple Pie",  "https://cdn.pixabay.com/photo/2013/02/10/14/36/apple-pie-80102_1280.jpg",  1,  0);
+INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(248,  81,  "Pumpkin Pie",  "https://cdn.pixabay.com/photo/2022/11/27/23/09/pumpkin-pie-7620872_1280.jpg",  1,  0);
+INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(429,  82,  "Popsicle",  "https://cdn.pixabay.com/photo/2020/09/30/11/47/popsicle-5615426_1280.jpg",  1,  0);
+INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(387,  82,  "Ice Cream",  "https://cdn.pixabay.com/photo/2019/09/26/23/21/ice-cream-4507202_1280.jpg",  1,  0);
+INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(367,  83,  "Apple Picking",  "https://cdn.pixabay.com/photo/2022/10/21/08/50/apples-7536537_1280.jpg",  1,  0);
+INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(495,  83,  "Pumpkin Picking",  "https://cdn.pixabay.com/photo/2021/09/25/14/26/pumpkins-6655119_1280.jpg",  1,  0);
+INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(319,  84,  "Coffee",  "https://cdn.pixabay.com/photo/2020/02/19/16/27/coffee-4862622_1280.jpg",  1,  0);
+INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(468,  84,  "Tea",  "https://cdn.pixabay.com/photo/2016/09/21/22/00/tea-1685847_1280.jpg",  1,  0);
+INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(117,  85,  "3 Story Wooden English Inn",  "https://cdn.pixabay.com/photo/2017/10/08/13/02/london-2829828_1280.jpg",  1,  0);
+INSERT INTO `quizzes`.`answer`(id, question_id, answer, answer_image_src, point, wrong_answer) VALUES(221,  85,  "4+ Story Mountain Hotel",  "https://cdn.pixabay.com/photo/2016/08/03/15/33/mountain-hotel-1567013_1280.jpg",  1,  0);
 
-
-
-
-################################################
-# insert data(8 records) into result table (table 4 of 4)
-################################################
+###########################################################
+# insert data(10 records) into result table (table 4 of 4)
+###########################################################
 INSERT INTO `quizzes`.`result`(id, quiz_id, requirement, result, result_image_src) VALUES(334,  4,  "If winged array has the largest sum",  "Winged White Unicorn",  "https://cdn.pixabay.com/photo/2024/05/11/13/03/unicorn-8754929_1280.png");
 INSERT INTO `quizzes`.`result`(id, quiz_id, requirement, result, result_image_src) VALUES(12,  4,  "If rainbow array has the largest sum",  "Rainbow Unicorn",  "https://cdn.pixabay.com/photo/2024/03/11/18/00/ai-generated-8627371_1280.jpg");
 INSERT INTO `quizzes`.`result`(id, quiz_id, requirement, result, result_image_src) VALUES(305,  4,  "If black array has the largest sum",  "Black Unicorn",  "https://cdn.pixabay.com/photo/2024/02/24/14/39/ai-generated-8594149_1280.png");
 INSERT INTO `quizzes`.`result`(id, quiz_id, requirement, result, result_image_src) VALUES(233,  5,  "if grade array >= 70 ",  "Pass",  "");
 INSERT INTO `quizzes`.`result`(id, quiz_id, requirement, result, result_image_src) VALUES(337,  5,  "if grade array < 70 ",  "Fail",  "");
+INSERT INTO `quizzes`.`result`(id, quiz_id, requirement, result, result_image_src) VALUES(150,  6,  "If cider array has the largest sum",  "Mulled Cider",  "https://cdn.pixabay.com/photo/2018/12/14/13/12/mulled-wine-christmas-3875014_1280.jpg");
+INSERT INTO `quizzes`.`result`(id, quiz_id, requirement, result, result_image_src) VALUES(151,  6,  "If pumpkin array has the largest sum",  "Pumpkin Spiced Latte",  "https://cdn.pixabay.com/photo/2019/10/29/19/39/halloween-4587928_1280.jpg");
 INSERT INTO `quizzes`.`result`(id, quiz_id, requirement, result, result_image_src) VALUES(339,  1,  "if grade > 65 points",  "Pass",  "");
 INSERT INTO `quizzes`.`result`(id, quiz_id, requirement, result, result_image_src) VALUES(342,  2,  "if grade > 75 points",  "Pass",  "");
 INSERT INTO `quizzes`.`result`(id, quiz_id, requirement, result, result_image_src) VALUES(4,  3,  "if grade >= 70 points",  "Pass",  "");
