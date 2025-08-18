@@ -1,5 +1,7 @@
 package com.skillstorm.quiz_controllers;
 
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,8 +31,18 @@ public class QuizController {
 	}
 	
 	//When user wants to look up an id like localhost:8080/quizzes/{id}
-	@GetMapping("/{quizId")
+	@GetMapping("/{quizId}")
 	public ResponseEntity<Quiz> findById(@PathVariable("quizId") int id) {
 		return this.service.findById(id);
 	}
+	
+	@GetMapping("/subject/{subject}")
+    public ResponseEntity<List<Quiz>> findAllBySubject(@PathVariable String subject) {
+        return this.service.findAllBySubject(subject);
+    }
+	
+	@GetMapping("/subjects")
+    public ResponseEntity<List<String>> findAllSubjects() {
+        return this.service.findAllSubjects();
+    }
 }

@@ -1,5 +1,6 @@
 package com.skillstorm.quiz_services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,19 @@ public class QuizService {
 		
 		return ResponseEntity.notFound().build();
 	}
+	
+	//To get a list of all quizzes by subject
+	public ResponseEntity<List<Quiz>> findAllBySubject(String subject) {
+        List<Quiz> list = repo.findAllBySubject(subject);
+        if (list.isEmpty()) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(list);
+    }
+
+    //To get a list of subjects
+    public ResponseEntity<List<String>> findAllSubjects() {
+        List<String> subjects = repo.findAllSubjects();
+        if (subjects.isEmpty()) return ResponseEntity.notFound().build();
+        return ResponseEntity.ok(subjects);
+    }
 
 }

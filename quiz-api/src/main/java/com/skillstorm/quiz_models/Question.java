@@ -7,21 +7,18 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
-//this annotation states that this class is a DB entity
-@Entity
-
-//this annotation states which table this class corresponds to
-@Table
+@Entity //this annotation states that this class is a DB entity
+@Table(name="question") //this annotation states which table this class corresponds to
 public class Question {
-	// this specifies that this property is the primary key for this table
-	@Id
+
+	@Id //primary key
 	@Column
 	private int id;
 	
 	//MANY questions can belong to ONE quiz
 	@ManyToOne
 	@JoinColumn(name="quiz_id", referencedColumnName="id")
-	private int quizId;
+	private Quiz quiz;
 	
 	@Column
 	private int sequence;
@@ -33,13 +30,11 @@ public class Question {
 	private String type;
 	
 	public Question() {
-		super();
 	}
 	
-	public Question(int id, int quizId, int sequence, String description, String type) {
-		super();
+	public Question(int id, Quiz quiz, int sequence, String description, String type) {
 		this.id = id;
-		this.quizId = quizId;
+		this.quiz = quiz;
 		this.sequence = sequence;
 		this.description = description;
 		this.type = type;
@@ -53,12 +48,12 @@ public class Question {
 		this.id = id;
 	}
 
-	public int getQuizId() {
-		return quizId;
+	public Quiz getQuiz() {
+		return quiz;
 	}
 
-	public void setQuizId(int quizId) {
-		this.quizId = quizId;
+	public void setQuiz(Quiz quiz) {
+		this.quiz = quiz;
 	}
 
 	public int getSequence() {

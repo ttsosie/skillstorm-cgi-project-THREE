@@ -10,7 +10,7 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity //this annotation states that this class is a DB entity
-@Table //this annotation states which table this class corresponds to
+@Table(name = "quiz") //this annotation states which table this class corresponds to
 public class Quiz {
 	
 	@Id //primary key
@@ -19,6 +19,9 @@ public class Quiz {
 	
 	@Column
 	private String name;
+	
+	@Column
+	private String subject;
 	
 	@Column
 	private String description;
@@ -37,10 +40,11 @@ public class Quiz {
 		super();
 	}
 	
-	public Quiz(int id, String name, String description, int numberOfQuestions, String quizImageSrc) {
+	public Quiz(int id, String name, String subject, String description, int numberOfQuestions, String quizImageSrc) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.subject = subject;
 		this.description = description;
 		this.numberOfQuestions = numberOfQuestions;
 		this.quizImageSrc = quizImageSrc;
@@ -60,6 +64,14 @@ public class Quiz {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getSubject() {
+		return subject;
+	}
+	
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
 
 	public String getDescription() {
