@@ -9,6 +9,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 @Entity //this annotation states that this class is a DB entity
 @Table(name = "quiz") //this annotation states which table this class corresponds to
 public class Quiz {
@@ -34,6 +36,7 @@ public class Quiz {
 	
 	//ONE quiz can have MANY questions
 	@OneToMany(mappedBy = "quiz", cascade = CascadeType.ALL)
+	@JsonManagedReference
 	private List<Question> questions;
 	
 	public Quiz() {

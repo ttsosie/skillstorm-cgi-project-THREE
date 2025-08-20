@@ -1,5 +1,7 @@
 package com.skillstorm.quiz_models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -18,6 +20,7 @@ public class Question {
 	//MANY questions can belong to ONE quiz
 	@ManyToOne
 	@JoinColumn(name="quiz_id", referencedColumnName="id")
+	@JsonBackReference
 	private Quiz quiz;
 	
 	@Column(name = "sequence")
