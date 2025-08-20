@@ -41,5 +41,11 @@ public class QuestionController {
     public ResponseEntity<List<Question>> findByQuizId(@PathVariable int quizId) {
         return this.service.findByQuizId(quizId);
     }
+	
+	//To get the questions in random order that go to a quiz
+	@GetMapping("/by-quiz/{quizId}/random")
+	public ResponseEntity<List<Question>> findByQuizIdRandom(@PathVariable int quizId) {
+		return this.service.findByQuizIdRandom(quizId);
+	}
 
 }

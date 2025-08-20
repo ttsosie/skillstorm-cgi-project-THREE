@@ -53,5 +53,14 @@ public class QuestionService {
         if (list.isEmpty()) return ResponseEntity.notFound().build();
         return ResponseEntity.ok(list);
     }
+	
+	//To find a random list of questions by quiz id
+	public ResponseEntity<List<Question>> findByQuizIdRandom(int quizId) {
+		List<Question> randomList = repo.findByQuiz_Id(quizId);
+		if(randomList.isEmpty()) return ResponseEntity.notFound().build();
+		
+		java.util.Collections.shuffle(randomList);
+		return ResponseEntity.ok(randomList);
+	}
 
 }
