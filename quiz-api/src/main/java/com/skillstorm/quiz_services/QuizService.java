@@ -51,6 +51,10 @@ public class QuizService {
 	public ResponseEntity<List<Quiz>> findAllBySubject(String subject) {
         List<Quiz> list = repo.findAllBySubject(subject);
         if (list.isEmpty()) return ResponseEntity.notFound().build();
+        
+        //To get the quizzes in random by subject
+        java.util.Collections.shuffle(list);
+        
         return ResponseEntity.ok(list);
     }
 

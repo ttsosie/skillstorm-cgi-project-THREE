@@ -36,6 +36,7 @@ public class QuizController {
 		return this.service.findById(id);
 	}
 	
+	//When we use this endpoint, it will return a list of quizzes in random order by subject
 	@GetMapping("/subject/{subject}")
     public ResponseEntity<List<Quiz>> findAllBySubject(@PathVariable String subject) {
         return this.service.findAllBySubject(subject);
