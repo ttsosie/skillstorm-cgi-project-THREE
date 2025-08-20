@@ -13,21 +13,21 @@ import jakarta.persistence.Table;
 @Table(name = "quiz") //this annotation states which table this class corresponds to
 public class Quiz {
 	
-	@Id //primary key
-	@Column
-	private int id;
+	@Id //primary key, manual and not auto-generated
+	@Column(name = "id", nullable = false) 
+	private int id; 
 	
-	@Column
+	@Column(name = "name", length = 100)
 	private String name;
 	
-	@Column
+	@Column(name = "subject", length = 100)
 	private String subject;
 	
-	@Column
+	@Column(name = "description", length = 500)
 	private String description;
 	
 	@Column(name = "number_of_questions")
-	private int numberOfQuestions;
+	private Integer numberOfQuestions; //NULL-able in schema, to make sure no misunderstanding wrap it around Integer since objects allow null entries
 	
 	@Column(name = "quiz_image_src")
 	private String quizImageSrc;
@@ -40,7 +40,7 @@ public class Quiz {
 		super();
 	}
 	
-	public Quiz(int id, String name, String subject, String description, int numberOfQuestions, String quizImageSrc) {
+	public Quiz(int id, String name, String subject, String description, Integer numberOfQuestions, String quizImageSrc) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -82,11 +82,11 @@ public class Quiz {
 		this.description = description;
 	}
 
-	public int getNumberOfQuestions() {
+	public Integer getNumberOfQuestions() {
 		return numberOfQuestions;
 	}
 
-	public void setNumberOfQuestions(int numberOfQuestions) {
+	public void setNumberOfQuestions(Integer numberOfQuestions) {
 		this.numberOfQuestions = numberOfQuestions;
 	}
 

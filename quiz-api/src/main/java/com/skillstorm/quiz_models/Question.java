@@ -8,11 +8,11 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity //this annotation states that this class is a DB entity
-@Table(name="question") //this annotation states which table this class corresponds to
+@Table(name = "question") 
 public class Question {
 
 	@Id //primary key
-	@Column
+	@Column(name = "id", nullable = false)
 	private int id;
 	
 	//MANY questions can belong to ONE quiz
@@ -20,19 +20,19 @@ public class Question {
 	@JoinColumn(name="quiz_id", referencedColumnName="id")
 	private Quiz quiz;
 	
-	@Column
-	private int sequence;
+	@Column(name = "sequence")
+	private Integer sequence; //DB allows this to be Null-able, wrap it with Integer because objects can have NULL values
 	
-	@Column
+	@Column(name = "description", length = 500)
 	private String description;
 	
-	@Column
+	@Column(name = "type", length = 100)
 	private String type;
 	
 	public Question() {
 	}
 	
-	public Question(int id, Quiz quiz, int sequence, String description, String type) {
+	public Question(int id, Quiz quiz, Integer sequence, String description, String type) {
 		this.id = id;
 		this.quiz = quiz;
 		this.sequence = sequence;
@@ -56,11 +56,11 @@ public class Question {
 		this.quiz = quiz;
 	}
 
-	public int getSequence() {
+	public Integer getSequence() {
 		return sequence;
 	}
 
-	public void setSequence(int sequence) {
+	public void setSequence(Integer sequence) {
 		this.sequence = sequence;
 	}
 
